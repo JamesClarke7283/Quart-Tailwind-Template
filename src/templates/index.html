@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="bg-white p-8 rounded-lg shadow-md text-center">
+    <h1 class="text-3xl font-bold mb-6">Counter App</h1>
+    <div class="text-6xl font-bold mb-6" id="counter">{{ counter }}</div>
+    <div class="flex justify-center space-x-4">
+        <form action="{{ url_for('index.decrement') }}" method="post">
+            <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
+                Decrement
+            </button>
+        </form>
+        <form action="{{ url_for('index.increment') }}" method="post">
+            <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+                Increment
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}

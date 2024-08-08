@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "QuartTailwindTemplate"
+dynamic = ["version"]
+description = "A simple template of Quart+Tailwind, counter application."
+authors = [
+    {name = "James David Clarke", email = "james@jamesdavidclarke.com"},
+]
+license = {file = "LICENSE"}
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+]
+
+dependencies = [
+    "python-dotenv",
+    "coloredlogs",
+    "quart[dotenv]",
+    "hypercorn",
+    "appdirs"
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "isort",
+    "mypy",
+]
+
+[project.urls]
+Homepage = "https://github.com/JamesClarke7283/Quart-Tailwind-Template"
+"Bug Tracker" = "https://github.com/JamesClarke7283/Quart-Tailwind-Template/issues"
+
+[tool.setuptools]
+packages = ["src"]
+
+[project.scripts]
+quarttailwind = "src.app:main"
+
+[tool.black]
+line-length = 100
+target-version = ['py311']
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+ignore_missing_imports = true
