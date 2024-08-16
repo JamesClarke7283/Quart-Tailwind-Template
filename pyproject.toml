@@ -24,7 +24,8 @@ dependencies = [
     "coloredlogs",
     "quart[dotenv]",
     "hypercorn",
-    "appdirs"
+    "appdirs",
+    "watchfiles"
 ]
 
 [project.optional-dependencies]
